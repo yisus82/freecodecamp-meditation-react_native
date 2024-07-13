@@ -1,6 +1,17 @@
 import AFFIRMATION_IMAGES from '@/constants/AffirmationImages';
 
-const AFFIRMATION_GALLERY = [
+interface AffirmationItem {
+  id: number;
+  text: string;
+  image: any;
+}
+
+interface AffirmationGroup {
+  title: string;
+  data: AffirmationItem[];
+}
+
+const AFFIRMATION_GALLERY: AffirmationGroup[] = [
   {
     title: 'Positivity',
     data: [

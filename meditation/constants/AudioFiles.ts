@@ -5,7 +5,7 @@ import Trees from '@/assets/audio/trees.mp3';
 import Waterfall from '@/assets/audio/waterfall.mp3';
 import YosemiteStars from '@/assets/audio/yosemite-stars.mp3';
 
-const AUDIO_FILES = {
+const AUDIO_FILES: { [key: string]: any } = {
   beach: Beach,
   meditateUnderTree: MeditateUnderTree,
   river: River,

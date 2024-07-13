@@ -5,7 +5,7 @@ import Trees from '@/assets/images/meditation/trees.webp';
 import Waterfall from '@/assets/images/meditation/waterfall.webp';
 import YosemiteStars from '@/assets/images/meditation/yosemite-stars.webp';
 
-const MEDITATION_IMAGES = {
+const MEDITATION_IMAGES: { [key: string]: any } = {
   beach: Beach,
   meditateUnderTree: MeditateUnderTree,
   river: River,

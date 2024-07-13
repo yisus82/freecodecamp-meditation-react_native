@@ -27,7 +27,7 @@ import Tuscanny2 from '@/assets/images/affirmation/Tuscanny-2.webp';
 import Tuscanny3 from '@/assets/images/affirmation/Tuscanny-3.webp';
 import Tuscanny4 from '@/assets/images/affirmation/Tuscanny-4.webp';
 
-const AFFIRMATION_IMAGES = {
+const AFFIRMATION_IMAGES: { [key: string]: any } = {
   californiaBackyard1: CaliforniaBackyard1,
   californiaBackyard2: CaliforniaBackyard2,
   californiaBackyard3: CaliforniaBackyard3,

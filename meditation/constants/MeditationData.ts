@@ -1,11 +1,11 @@
-export interface Meditation {
+export interface MeditationItem {
   id: number;
   title: string;
   image: string;
   audio: string;
 }
 
-export const MEDITATION_DATA: Meditation[] = [
+export const MEDITATION_DATA: MeditationItem[] = [
   {
     id: 1,
     title: 'Mountains',

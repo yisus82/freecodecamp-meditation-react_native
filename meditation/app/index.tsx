@@ -1,18 +1,18 @@
 import AppGradient from '@/components/AppGradient';
 import Button from '@/components/Button';
+import ViewWithStatusBar from '@/components/ViewWithStatusBar';
 import COLORS from '@/constants/Colors';
 import MEDITATION_IMAGES from '@/constants/MeditationImages';
 import { useRouter } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, Text, View } from 'react-native';
 
 const HomeScreen = () => {
   const router = useRouter();
 
   return (
-    <View className="flex-1">
+    <ViewWithStatusBar>
       <ImageBackground source={MEDITATION_IMAGES.beach} resizeMode='cover' className="flex-1">
-        <AppGradient colors={[COLORS.initialGradient, COLORS.finalGradient]}>
+        <AppGradient colors={[COLORS.black40, COLORS.black80]}>
           <View className="flex-1 justify-between">
             <View>
               <Text className="text-center text-white font-bold text-4xl">Simple Meditation</Text>
@@ -21,11 +21,10 @@ const HomeScreen = () => {
             <View>
               <Button text="Get Started" onPress={() => router.push('/nature-meditate')} />
             </View>
-            <StatusBar style='light' />
           </View>
         </AppGradient>
       </ImageBackground>
-    </View>
+    </ViewWithStatusBar>
   );
 };
 

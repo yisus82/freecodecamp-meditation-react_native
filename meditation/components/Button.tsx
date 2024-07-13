@@ -2,8 +2,8 @@ import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 
 interface ButtonProps {
-  onPress: () => void;
   text: string;
+  onPress: () => void;
   buttonAdditionalClassNames?: string;
   textAdditionalClassNames?: string;
 }
