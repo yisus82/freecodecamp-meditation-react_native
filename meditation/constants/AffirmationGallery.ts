@@ -1,12 +1,12 @@
 import AFFIRMATION_IMAGES from '@/constants/AffirmationImages';
 
-interface AffirmationItem {
+export interface AffirmationItem {
   id: number;
   text: string;
   image: any;
 }
 
-interface AffirmationGroup {
+export interface AffirmationGroup {
   title: string;
   data: AffirmationItem[];
 }
