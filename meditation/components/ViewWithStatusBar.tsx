@@ -4,13 +4,15 @@ import { View } from 'react-native';
 
 const ViewWithStatusBar = ({
   children,
-  style = 'light'
+  additionalStyles,
+  statusBarStyle = 'light'
 }: {
   children: ReactNode,
-  style?: StatusBarStyle;
+  additionalStyles?: string,
+  statusBarStyle?: StatusBarStyle;
 }) =>
-  <View className="flex-1">
-    <StatusBar style={style} />
+  <View className={`flex-1 ${additionalStyles}`.trimEnd()}>
+    <StatusBar style={statusBarStyle} />
     {children}
   </View>;
 
