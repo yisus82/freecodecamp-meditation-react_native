@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 
-const AffirmationsLayout = () =>
+const MeditateLayout = () =>
   <Stack>
     <Stack.Screen
       name='index'
@@ -16,4 +16,4 @@ const AffirmationsLayout = () =>
     />
   </Stack>;
 
-export default AffirmationsLayout;
+export default MeditateLayout;

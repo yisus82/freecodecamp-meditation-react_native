@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        rmono: ['Roboto-Mono', 'sans-serif'],
+        rmono: ['RobotoMono', 'sans-serif'],
       },
     },
   },

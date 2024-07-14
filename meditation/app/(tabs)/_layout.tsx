@@ -12,24 +12,24 @@ const TabsLayout = () =>
     }}
   >
     <Tabs.Screen
-      name="nature-meditate"
+      name='meditate'
       options={{
-        tabBarLabel: "Meditate",
+        tabBarLabel: 'Meditate',
         tabBarIcon: ({ color }) =>
           <MaterialCommunityIcons
-            name="flower-tulip"
+            name='flower-tulip'
             size={24}
             color={color}
           />,
       }}
     />
     <Tabs.Screen
-      name="affirmations"
+      name='affirmations'
       options={{
-        tabBarLabel: "Affirmations",
+        tabBarLabel: 'Affirmations',
         tabBarIcon: ({ color }) =>
           <Entypo
-            name="open-book"
+            name='open-book'
             size={24}
             color={color}
           />,

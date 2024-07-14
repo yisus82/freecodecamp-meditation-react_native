@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
 
 interface ButtonProps {
   text: string;
@@ -11,8 +11,8 @@ interface ButtonProps {
 const Button = ({
   text,
   onPress,
-  buttonAdditionalClassNames = "",
-  textAdditionalClassNames = "",
+  buttonAdditionalClassNames = '',
+  textAdditionalClassNames = '',
 }: ButtonProps) =>
   <TouchableOpacity
     activeOpacity={0.7}

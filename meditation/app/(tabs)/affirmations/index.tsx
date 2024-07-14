@@ -9,7 +9,7 @@ const Affirmations = () =>
   <ViewWithStatusBar>
     <AppGradient colors={[COLORS.affirmations1, COLORS.affirmations2, COLORS.affirmations3]}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text className="text-zinc-50 text-3xl font-bold">
+        <Text className='text-zinc-50 text-3xl font-bold'>
           Change your beliefs with affirmations
         </Text>
         <View>
