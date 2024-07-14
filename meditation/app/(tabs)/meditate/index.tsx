@@ -9,7 +9,7 @@ import { FlatList, ImageBackground, Pressable, Text } from 'react-native';
 
 const Meditate = () =>
   <ViewWithStatusBar>
-    <AppGradient colors={[COLORS.natureMeditate1, COLORS.natureMeditate2, COLORS.natureMeditate3]}>
+    <AppGradient colors={[COLORS.meditate1, COLORS.meditate2, COLORS.meditate3]}>
       <Text className='text-zinc-50 text-3xl font-bold mb-6'>
         Start your meditation practice today
       </Text>

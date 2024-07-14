@@ -2,7 +2,11 @@ import { AffirmationGroup } from '@/constants/AffirmationGallery';
 import { Link } from 'expo-router';
 import { FlatList, Image, Pressable, Text, View } from 'react-native';
 
-const GuidedAffirmationsGallery = ({ group }: { group: AffirmationGroup; }) =>
+interface GuidedAffirmationsGalleryProps {
+  group: AffirmationGroup;
+}
+
+const GuidedAffirmationsGallery = ({ group }: GuidedAffirmationsGalleryProps) =>
   <View className='my-5'>
     <View className='mb-2'>
       <Text className='text-white font-bold text-xl'>{group.title}</Text>

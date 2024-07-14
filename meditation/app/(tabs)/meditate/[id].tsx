@@ -5,16 +5,17 @@ import AUDIO_FILES from '@/constants/AudioFiles';
 import COLORS from '@/constants/Colors';
 import { MEDITATION_DATA, MeditationItem } from '@/constants/MeditationData';
 import MEDITATION_IMAGES from '@/constants/MeditationImages';
+import { DEFAULT_DURATION, TimerContext } from '@/context/TimerContext';
 import { AntDesign } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
 import { router, useLocalSearchParams } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ImageBackground, Pressable, Text, View } from 'react-native';
 
 const Meditation = () => {
   const { id } = useLocalSearchParams();
   const [meditation, setMeditation] = useState<MeditationItem>();
-  const [secondsRemaining, setSecondsRemaining] = useState(10);
+  const { duration: secondsRemaining, setDuration: setSecondsRemaining } = useContext(TimerContext);
   const [isMeditating, setIsMeditating] = useState(false);
   const [audioSound, setAudioSound] = useState<Audio.Sound>();
   const [isPlayingAudio, setPlayingAudio] = useState(false);
@@ -43,7 +44,7 @@ const Meditation = () => {
 
   const toggleMeditationSessionStatus = async () => {
     if (secondsRemaining === 0) {
-      setSecondsRemaining(10);
+      setSecondsRemaining(DEFAULT_DURATION);
     }
 
     if (isPlayingAudio) {
@@ -73,7 +74,7 @@ const Meditation = () => {
 
   useEffect(() => {
     return () => {
-      setSecondsRemaining(10);
+      setSecondsRemaining(DEFAULT_DURATION);
       audioSound?.unloadAsync();
     };
   }, [audioSound]);
@@ -83,6 +84,14 @@ const Meditation = () => {
     const seconds = timeInSeconds % 60;
 
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const handleAdjustDuration = () => {
+    if (isMeditating) {
+      toggleMeditationSessionStatus();
+    }
+
+    router.push("/(modal)/adjust-meditation-duration");
   };
 
   return (
@@ -101,6 +110,7 @@ const Meditation = () => {
               <Text className='text-blue-800 text-4xl font-rmono'>{formatTime(secondsRemaining)}</Text>
             </View>
           </View>
+          <Button text='Adjust duration' onPress={handleAdjustDuration} buttonAdditionalClassNames='mb-5' />
           <Button text={isMeditating ? 'Stop' : 'Start'} onPress={toggleMeditationSessionStatus} buttonAdditionalClassNames='mb-5' />
         </AppGradient>
       </ImageBackground>
